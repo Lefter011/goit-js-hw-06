@@ -9,12 +9,21 @@ const ingredients = [
 
 const list = document.querySelector("#ingredients");
 
-const markup = ingredients
-.map((ingredient) => `<li class="item">${ingredient}</li>`)
-.join("");
+const elements = ingredients.map((option) => {
+  const listItemEl = document.createElement("li");
+  listItemEl.textContent = `${option}`;
+  listItemEl.classList.add("item");
+  return listItemEl;
+});
 
-console.log(markup);
-list.innerHTML = markup;
+list.append(...elements);
+
+// const markup = ingredients
+// .map((ingredient) => `<li class="item">${ingredient}</li>`)
+// .join("");
+
+// console.log(markup);
+// list.innerHTML = markup;
 
 // const elements = [];
 
